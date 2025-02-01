@@ -8,6 +8,10 @@ requirements = []
 path = "contracts/guild-core.clar"
 depends_on = []
 
+[contracts.guild-treasury]
+path = "contracts/guild-treasury.clar"
+depends_on = []
+
 [repl]
 costs_version = 2
 parser_version = 2
