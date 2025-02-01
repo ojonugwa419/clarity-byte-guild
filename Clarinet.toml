@@ -8,6 +8,10 @@ requirements = []
 path = "contracts/guild-core.clar"
 depends_on = []
 
+[contracts.guild-reputation]
+path = "contracts/guild-reputation.clar"
+depends_on = []
+
 [contracts.guild-treasury]
 path = "contracts/guild-treasury.clar"
 depends_on = []
