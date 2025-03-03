@@ -40,12 +40,13 @@
 (define-public (withdraw (guild-id uint) (amount uint))
   (let (
     (current-balance (get-treasury-balance guild-id))
+    (contract-address (as-contract tx-sender))
   )
     (asserts! (is-guild-admin guild-id tx-sender) err-unauthorized)
     (asserts! (>= current-balance amount) err-insufficient-funds)
     (asserts! (> amount u0) err-invalid-amount)
     
-    (try! (as-contract (stx-transfer? amount tx-sender tx-sender)))
+    (try! (as-contract (stx-transfer? amount contract-address tx-sender)))
     (map-set guild-treasury
       { guild-id: guild-id }
       {
